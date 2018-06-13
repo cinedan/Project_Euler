@@ -17,7 +17,7 @@ def naive(n):
     sum_n = sum(range(1,n+1))
     return sum([i * i for i in range(1,n+1)]) - (sum_n * sum_n)
 
-# 'efficient' uses formulas to fine the solution in constant time
+# 'efficient' uses formulas to find the solution in constant time and space
 def efficient(n):
     sum_n = n * (n + 1) // 2
     sum_n_squared = n * (n + 1) * (2 * n + 1) // 6
