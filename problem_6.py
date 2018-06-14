@@ -12,6 +12,8 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
 
+import sys 
+
 # 'naive' solution runs in linear time and linear space with respect to n
 def naive(n):
     sum_n = sum(range(1,n+1))
@@ -24,7 +26,12 @@ def efficient(n):
     return sum_n_squared - (sum_n * sum_n)
 
 if __name__ == '__main__':
-    print("Up to what value do you want to calculate? ")
-    n = int(input())
+    if len(sys.argv) > 1:
+        n = int(sys.argv[1])
+    else:
+        print("Up to what value do you want to calculate? ")
+        n = int(input())
     print(n)
-    print("result = ", naive(n), efficient(n))
+    naive_sol = naive(n)
+    eff_sol = efficient(n)
+    print("result = ", naive_sol, eff_sol)
